@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/resultPad"
+        layout="@layout/result_pad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.20"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fourthRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="16dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fourthRow"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="38dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toBottomOf="@id/resultPad"
+        app:layout_constraintBottom_toTopOf="@id/scientificPad">
+        <ImageButton
+            android:id="@+id/one"
+            style="@style/Widget.CalculatorPlus.NumPad.Primary.IconOnly"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_button__1_"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText"
+            android:background="#FFFFFFFF"
+            />
+        <ImageButton
+            android:id="@+id/two"
+            style="@style/Widget.CalculatorPlus.NumPad.Primary.IconOnly"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_button"
+
+            app:layout_constraintStart_toEndOf="@id/one"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText"
+            android:background="#FFFFFFFF"
+            />
+        <ImageButton
+            android:id="@+id/delete"
+            style="@style/Widget.CalculatorPlus.NumPad.Primary.IconOnly"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_button__2_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="#FFFFFFFF"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        android:id="@+id/scientificPad"
+        layout="@layout/scientific_pad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintBottom_toTopOf="@id/divider"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/fourthRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="38dp"
+
+        />
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:background="?attr/border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="16dp"
+        app:layout_constraintTop_toBottomOf="@id/scientificPad"
+        app:layout_constraintBottom_toTopOf="@id/numPad"
+        />
+    <include
+        android:id="@+id/numPad"
+        layout="@layout/num_pad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.44"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="16dp"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
